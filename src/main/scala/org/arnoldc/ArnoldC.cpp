@@ -35,6 +35,9 @@ int main(int argc, char* argv[]) {
     std::ifstream t(filename);
     std::stringstream sourceCode;
     sourceCode << t.rdbuf();
+
+    ArnoldGenerator *a = new ArnoldGenerator();
+    char *bytecode = a.generate(sourceCode.str(), filename);
     
     return 0;
 }
